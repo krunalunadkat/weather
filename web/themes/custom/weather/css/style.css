@@ -1,0 +1,21 @@
+/**
+ * @file
+ * Subtheme specific CSS.
+ */
+
+.node--type-weather .weather-node-title {
+    text-align: center;
+}
+
+.node--type-weather  .weather-section{
+    text-align: center;
+}
+.node--type-weather  .weather-section h3{
+    text-align: center;
+    display: inline-block;
+    background-color: #d64e4e;
+}
+
+.node--type-weather .field--type-youtube {
+    text-align: center;
+}

@@ -1,0 +1,71 @@
+<?php
+
+use Drupal\node\Entity\Node;
+
+/**
+ * @file
+ * Functions to support theming in the SASS Starterkit subtheme.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_system_theme_settings_alter() for settings form.
+ *
+ * Replace Barrio setting options with subtheme ones.
+ *
+ * Example on how to alter theme settings form
+ */
+function weather_form_system_theme_settings_alter(&$form, FormStateInterface $form_state) {
+  $form['components']['navbar']['bootstrap_barrio_navbar_top_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+  $form['components']['navbar']['bootstrap_barrio_navbar_background']['#options'] = [
+    'bg-primary' => t('Primary'),
+    'bg-secondary' => t('Secondary'),
+    'bg-light' => t('Light'),
+    'bg-dark' => t('Dark'),
+    'bg-white' => t('White'),
+    'bg-transparent' => t('Transparent'),
+  ];
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function weather_preprocess_node(&$variables) {
+  $type = $variables['node']->getType();
+  if ($type == 'weather') {
+    $node = $variables['node'];
+    $nid = $node->id();
+    if($nid) {
+      // Node load to get node data
+      $node = Node::load($nid);
+      if($node->hasField('field_city') && !$node->get('field_city')->isEmpty()) {
+        // Get city id from node data.
+        $city_id = $node->get('field_city')->getValue()[0]['city'];
+
+        // Database query to get city name
+        $query = \Drupal::database()->select('citylist_field_data', 'n');
+        $query->addField('n', 'name');
+        $query->condition('n.id', $city_id);;
+        $cityName = $query->execute()->fetchField();
+
+        // Fetcg data from API.
+        $jsonurl = "https://api.openweathermap.org/data/2.5/weather?q=".$cityName."&appid=33a41396b43aab057fb61629b827ca12";
+        $json = file_get_contents($jsonurl);
+        $weather = json_decode($json);
+        $kelvin = $weather->main->temp;
+
+        // Convert kelvin to celsius
+        $celcius = $kelvin - 273.15;
+        $variables['current_temperature'] = $celcius . ' °C';
+      }
+    }
+  }
+}
