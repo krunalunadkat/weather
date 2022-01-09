@@ -1,0 +1,20 @@
+uuid: 94c597dc-eb11-4640-8b59-2a1053f2ac35
+langcode: en
+status: true
+dependencies:
+  theme:
+    - weather
+_core:
+  default_config_hash: ffxthelqQF8xcr4GTG4HlaNNsluiHftN0pujmQpW0bQ
+id: weather_local_actions
+theme: weather
+region: header
+weight: 20
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  label_display: '0'
+  provider: core
+visibility: {  }

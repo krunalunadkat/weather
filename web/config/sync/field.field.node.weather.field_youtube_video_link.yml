@@ -1,0 +1,21 @@
+uuid: d945d69f-5d60-4209-8596-b806301fccab
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_youtube_video_link
+    - node.type.weather
+  module:
+    - youtube
+id: node.weather.field_youtube_video_link
+field_name: field_youtube_video_link
+entity_type: node
+bundle: weather
+label: 'YouTube Video Link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

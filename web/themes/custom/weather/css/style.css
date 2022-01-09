@@ -9,6 +9,9 @@
 
 .node--type-weather  .weather-section{
     text-align: center;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 0; /* required */
 }
 .node--type-weather  .weather-section h3{
     text-align: center;
@@ -17,5 +20,5 @@
 }
 
 .node--type-weather .field--type-youtube {
-    text-align: center;
+        text-align: center;
 }

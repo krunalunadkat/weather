@@ -1,0 +1,49 @@
+uuid: 5731f89f-d3de-4b36-89a7-9c5e262d32e4
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.weather.body
+    - field.field.node.weather.field_city
+    - field.field.node.weather.field_youtube_video_link
+    - node.type.weather
+  module:
+    - text
+    - user
+    - youtube
+id: node.weather.default
+targetEntityType: node
+bundle: weather
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_youtube_video_link:
+    type: youtube_video
+    label: hidden
+    settings:
+      youtube_size: 450x315
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_mute: false
+      youtube_loop: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  field_city: true
+  langcode: true

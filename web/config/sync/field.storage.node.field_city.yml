@@ -1,0 +1,24 @@
+uuid: e21b4757-2c0e-46dd-a99e-9124baec017c
+langcode: en
+status: true
+dependencies:
+  module:
+    - country_state_city
+    - node
+id: node.field_city
+field_name: field_city
+entity_type: node
+type: country_state_city_type
+settings:
+  country_lable: ''
+  state_lable: ''
+  city_lable: ''
+  is_ascii: false
+  case_sensitive: false
+module: country_state_city
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,35 @@
+uuid: bf279a6f-476d-4ccb-a869-21e7533d5873
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.weather.body
+    - field.field.node.weather.field_city
+    - field.field.node.weather.field_youtube_video_link
+    - node.type.weather
+  module:
+    - text
+    - user
+id: node.weather.teaser
+targetEntityType: node
+bundle: weather
+mode: teaser
+content:
+  body:
+    type: text_summary_or_trimmed
+    label: hidden
+    settings:
+      trim_length: 600
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_city: true
+  field_youtube_video_link: true
+  langcode: true

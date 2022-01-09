@@ -1,0 +1,23 @@
+uuid: cb79e175-c752-46df-9e4a-83989a42e67a
+langcode: en
+status: true
+dependencies:
+  module:
+    - statistics
+  theme:
+    - weather
+id: popularcontent
+theme: weather
+region: sidebar_second
+weight: 0
+provider: null
+plugin: statistics_popular_block
+settings:
+  id: statistics_popular_block
+  label: 'Popular content'
+  label_display: visible
+  provider: statistics
+  top_day_num: 5
+  top_all_num: 5
+  top_last_num: 5
+visibility: {  }

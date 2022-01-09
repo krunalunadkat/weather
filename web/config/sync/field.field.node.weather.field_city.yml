@@ -1,0 +1,21 @@
+uuid: e927dc4d-e2c0-4afb-8ce1-27f7d0e6d4ef
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_city
+    - node.type.weather
+  module:
+    - country_state_city
+id: node.weather.field_city
+field_name: field_city
+entity_type: node
+bundle: weather
+label: City
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: country_state_city_type

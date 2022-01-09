@@ -1,0 +1,11 @@
+uuid: 8d78fd85-e6dc-4dbb-bc69-6baa08ebcff6
+langcode: en
+status: true
+dependencies:
+  config:
+    - node.type.weather
+id: node.weather
+target_entity_type_id: node
+target_bundle: weather
+default_langcode: site_default
+language_alterable: false
