@@ -22,3 +22,38 @@
 .node--type-weather .field--type-youtube {
         text-align: center;
 }
+.node--type-weather .sticky-section {
+    position: sticky;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 24%) 0px 3px 8px;
+    background-color: #fff;
+    z-index: 999;
+    padding: 10px;
+    margin-bottom: 30px;
+}
+.nav.navbar-nav{
+    flex-direction: row;
+}
+.nav-item{
+    margin-right: 30px;
+}
+nav#navbar-top{
+    width: 100%;
+}
+.block.block-menu.navigation.menu--main{
+    width: calc(100% - 130px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navbar-brand {
+    width: 80px!important;
+}
+.region-top-header{
+    flex-wrap: inherit!important;
+    width: 100%;
+    justify-content: space-between;
+}
